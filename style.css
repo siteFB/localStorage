@@ -72,7 +72,6 @@ input[type=text]:focus {
     font-size: 1.5em;
     margin: 80px;
     margin-top: 100px;
-    word-wrap: break-word;
 }
 
 .toknow {
@@ -90,7 +89,7 @@ section {
     text-align: justify;
     line-height: 35px;
     box-shadow: 25px -20px 18px gray;
-    width:auto;
+    width:80em;
 }
 
 #liste #artUl ul {
@@ -194,7 +193,16 @@ footer div:first-child p {
 
 /********************** MEDIA QUERIES *********************/
 
+@media screen and (max-width:1350px){
+    section {
+        width:60em;
+    }
+}
+
 @media screen and (max-width:1000px){
+    section {
+        width:auto;
+    }
     #liste img:hover{
         transform:scale(1.5);
         }
