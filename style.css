@@ -1,0 +1,191 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    font-family: 'Roboto', sans-serif;
+    word-wrap: break-word;
+}
+
+html {
+    background-image: url(/img/bannière.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+header,
+footer {
+    margin-top: 50px;
+    padding: 100px;
+    text-align: center;
+}
+
+#sp {
+    font-size: 50px;
+    text-transform: uppercase;
+    color: white;
+}
+
+#sp {
+    animation: blue 0.5s linear infinite;
+    animation-delay: 0.5s;
+}
+
+@keyframes blue {
+    from {
+        text-shadow: 0 0 5px blue,
+            0 0 15px blue,
+            0 0 30px blue,
+            0 0 60px blue;
+    }
+}
+
+header h2 {
+    margin-top: 100px;
+    line-height: 50px;
+    font-size: 50px;
+    color: white;
+    text-shadow: 0 0 3px #001aff;
+    font-style: oblique;
+}
+
+/**************** Search bar ****************/
+#searchbar {
+    margin-top: 80px;
+    padding: 15px;
+    border-radius: 10px;
+}
+
+input[type=text] {
+    width: 30%;
+    transition: width 0.15s ease-in-out;
+}
+
+/* When the input field gets focus,
+       change its width to 100% */
+input[type=text]:focus {
+    width: 70%;
+}
+
+#liste {
+    font-size: 1.5em;
+    margin: 80px;
+    margin-top: 100px;
+    word-wrap: break-word;
+}
+
+.toknow {
+    display: list-item;
+}
+
+/*************** end search bar ***********/
+
+section {
+    background-color: Field;
+    margin: auto;
+    margin-top: 80px;
+    width: min-content;
+    border: 1px solid rgb(179, 177, 177);
+    text-align: justify;
+    line-height: 35px;
+    box-shadow: 25px -20px 18px gray;
+}
+
+#liste #artUl ul {
+    margin-left: 90px;
+}
+
+#works {
+    text-align: center;
+    margin-bottom: 80px;
+    font-size: 50px;
+    font-weight: bolder;
+    text-shadow: 3px 3px 3px black;
+}
+
+hr {
+    color: rgb(253, 249, 249);
+}
+
+#liste #it {
+    border: 1px solid rgb(179, 177, 177);
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 5px -4px 5px rgb(201, 199, 199);
+}
+
+h3 {
+    margin: 80px 0 70px 0;
+    text-align: center;
+    font-size: 40px;
+}
+
+h4 {
+    margin: 40px 0 20px 50px;
+}
+
+ul p,
+#artUl ul:nth-child(7) li:first-child,
+#artUl ul:nth-child(7) li:nth-child(3),
+#artUl ul:nth-child(7) li:nth-child(5) {
+    margin-bottom: 10px;
+    font-style: oblique;
+    text-decoration: underline;
+    color: dimgray;
+}
+
+#artUl li {
+    margin-bottom: 10px;
+}
+
+.toknow:last-child p {
+    text-align: left;
+}
+
+article:last-child {
+    border: 1px solid rgb(179, 177, 177);
+    border-radius: 10px;
+    box-shadow: 15px -10px 8px rgb(201, 199, 199);
+    padding: 30px;
+    margin: 70px 0 20px 0;
+    font-size: 20px;
+}
+
+article:last-child h3 {
+    margin: 0 0 30px 0;
+}
+
+article:last-child p {
+    margin-top: 20px;
+}
+
+/*********************** FOOTER *********************/
+footer div a {
+    color: black;
+    line-height: 30px;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
+
+footer div:first-child p {
+    text-transform: uppercase;
+    background-image: linear-gradient(to right top, #34ffee, #12b4ff, #2f44ff, #d394f0, #ba2ad6);
+    background-size: 50% auto;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-family: 'Poppins', sans-serif;
+    font-size: 4vw;
+    font-weight: bolder;
+    animation: gradientAnim 7.5s ease alternate infinite;
+    margin-bottom: 50px;
+}
+
+@keyframes gradientAnim {
+    to {
+        background-position: 100% top;
+    }
+}
+
+
+

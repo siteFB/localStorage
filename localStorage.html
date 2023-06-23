@@ -1,102 +1,118 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>LocalStorage</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
 </head>
 
 <body>
     <header>
-        <h1>Avec le stockage local,</h1>
-        <h2>il est possible de faire du stockage hors ligne grâce à l’API LocalStorage. On peut ainsi sauvegarder des
-            données sous forme de chaines de caractères (des paires clé/valeur).</h2>
-    </header>
-    <article>
-        <h3>Comment ça marche?</h3>
-        <p>Stockées localement, les données ne sont jamais transmises au serveur web distant comme c'est le cas pour les
-            cookies.</p>
-           <p>Cette solution de stockage peut être être utilisée au même titre que les sessions en PHP à la différence
-            qu'elle ne nécessite pas de requête HTTP.</p>
-            <p>Ces données sont mémorisées à vie pour un même navigateur, elles peuvent être partagées entres les
-            onglets et les pages du même site.</p>
-            <p>L’espace de stockage maximum est de cinq mégaoctets par site. Les
-            propriétés de stockage sont associées uniquement au domaine.</p>
-            <p>Ne pas confondre avec "sessionStorage", qui maintient le stockage seulement lorsque que la fenêtre du
-            navigateur est active.</p>
-        <p>Le localStorage ou la sessionStorage récupèrent les données, les stockent et les suppriment.
-        </p> 
-    </article>
-    <article>
-        <h3>La syntaxe...</h3>
-
-        <h4>...pour récupérer</h4>
-        <ul>
-            Au choix:
-            <li>localStorage.getItem("cle");</li>
-            <li>localStorage["cle"];</li>
-            <li>localStorage.cle;</li>
-        </ul>
-
-        <h4>...pour stocker</h4>
-        <ul>
-            Au choix:
-            <li>localStorage.setItem("cle", "valeur");</li>
-            <li>localStorage["cle"] = "valeur";</li>
-            <li>localStorage.cle = "valeur";</li>
-        </ul>
-
-        <h4>...pour afficher</h4>
-        <ul>
-            <li>...le nombre de paires:</li>
-            <li>localStorage.length;</li>
-            <li>...le nom de la clé:</li>
-            <li>localStorage.key(0);</li>
-            <li>...toutes les clés:</li>
-            <li> for( let i = 0; i < localStorage.length; i++){ localStorage.key(i); }</li>
-        </ul>
-
-        <h4>...pour supprimer</h4>
-        <ul>
-            Au choix:
-            <li>localStorage.removeItem("cle");</li>
-            <li>localStorage.clear();</li>
-        </ul>
-    </article>
-    <article>
-
-        <h3>À savoir</h3>
-        <span>
-            La syntaxe localStorage.setItem() ne stocke que des valeurs sous forme de chaines de caractères. Pour
-            mémoriser des valeurs complexes, on utilisera le format JSON (JavaScript Objet Notation) et on sérialise (ou
-            linéarise) l’objet avec la syntaxe JSON.stringify() ce qui remplacera l'objet en chaîne de caractère.
-            Inversement, pour la lecture, la syntaxe JSON.parse() reforme l’objet à partir de la chaîne linéarisée.
+        <span id="sp">
+            <h1>Avec le stockage local</h1>
         </span>
-        <div>Exemples:
-        <ul>
-            <li>
-                let objJson = {<br>
-                    prenom: "John",<br>
-                    age: 30,<br>
-                    taille: 180<br>
-                }<br>
-                let objLinea = JSON.stringify(objJson);<br>
-                localStorage.setItem("obj", objLinea);<br>
-            
-            </li>
-            <li>
-                let objLinea = localStorage.getItem("obj");<br>
-                let objJson = JSON.parse(objLinea);<br>
-                alert(objJson.age) // renvoie 30<br>
-                
-            </li>
-        </ul>
-    </div>
-    </article>
+        <h2>
+            <p>" il est possible de faire du stockage hors ligne grâce à l’API LocalStorage.</p>
+            <p>On peut ainsi sauvegarder des
+                données des paires clé/valeur "</p>
+        </h2>
+        <input id="searchbar" onkeyup="search_infos()" type="text" name="search"
+            placeholder="Search informations about...">
+    </header>
+    <section>
+        <div id="liste">
+            <h2 class="toknow" id="works">Comment ça marche?</h3>
+                <hr>
+                <article>
+                    <h3 class="toknow">Fonctionnement</h3>
+                    <p>Stockées localement, les données ne sont jamais transmises au serveur web distant comme c'est le
+                        cas
+                        pour les
+                        cookies.</p>
+                    <p>Cette solution de stockage a le même rôle que les sessions en PHP à la différence qu'elle ne
+                        nécessite pas de requête HTTP. Les données sont mémorisées à vie pour un même navigateur, elles
+                        peuvent être partagées entres les onglets et les pages du site.</p>
+                    <p>L’espace de stockage maximum est de cinq mégaoctets par site et les propriétés de stockage sont
+                        associées uniquement au domaine.</p>
+                    <p>Le localStorage comme la sessionStorage récupèrent les données, les stockent et les suppriment.
+                    </p><br>
+                    <p id="it"><i>Toutefois, ne pas confondre avec "sessionStorage" qui maintient le stockage seulement
+                            lorsque que la fenêtre du navigateur est active.</i></p>
+                </article>
+                <article id="artUl">
+                    <h3>La syntaxe</h3>
+                    <h4 class="toknow">Récupérer</h4>
+                    <ul>
+                        <p>Au choix:</p>
+                        <li>localStorage.getItem("cle");</li>
+                        <li>localStorage["cle"];</li>
+                        <li>localStorage.cle;</li>
+                    </ul>
+                    <h4 class="toknow">Stocker</h4>
+                    <ul>
+                        <p>Au choix:</p>
+                        <li>localStorage.setItem("cle", "valeur");</li>
+                        <li>localStorage["cle"] = "valeur";</li>
+                        <li>localStorage.cle = "valeur";</li>
+                    </ul>
+                    <h4 class="toknow">Afficher</h4>
+                    <ul>
+                        <li>le nombre de paires:</li>
+                        <li>localStorage.length;</li>
+                        <li>le nom de la clé:</li>
+                        <li>localStorage.key(0);</li>
+                        <li>toutes les clés:</li>
+                        <li> for( let i = 0; i < localStorage.length; i++){ localStorage.key(i); }</li>
+                    </ul>
+                    <h4 class="toknow">Supprimer</h4>
+                    <ul>
+                        <p>Au choix:</p>
+                        <li>localStorage.removeItem("cle");</li>
+                        <li>localStorage.clear();</li>
+                    </ul>
+                </article>
+                <article>
+                    <h3 class="toknow">À savoir</h3>
+                    <span>
+                        La syntaxe localStorage.setItem() ne stocke que des valeurs sous forme de chaines de caractères.
+                        Pour
+                        mémoriser des valeurs complexes, on utilisera le format JSON (JavaScript Objet Notation) et on
+                        sérialise (ou
+                        linéarise) l’objet avec la syntaxe JSON.stringify() ce qui remplacera l'objet en chaîne de
+                        caractère.
+                        Inversement, pour la lecture, la syntaxe JSON.parse() reforme l’objet à partir de la chaîne
+                        linéarisée.
+                    </span>
+                    <div class="toknow">
+                        <p>Exemples:</p>
+                        <div>
+                            <p>Pour stocker:
+                                <img src="/img/stocker.png" alt="Stocker en tant que    notation avec JSON.stringify()">
+                            </p>
+                            <p>Pour lire:
+                                <img src="/img/lire.png" alt="Lire une chaîne en utilisant  JSON.parse()">
+                            </p>
+                        </div>
+                    </div>
+        </div>
+        </article>
+    </section>
     <footer>
-
+        <article>
+            <div>
+                <p>@ FOOTER</p>
+            </div>
+            <div><a href="https://tutowebdesign.com/localstorage-javascript.php">Ressources</a></div>
+            <div><a href="https://github.com/siteFB/meteo">Auteur</a></div>
+        </article>
     </footer>
+
+    <script src="./toknow.js"></script>
 </body>
 
 </html>
