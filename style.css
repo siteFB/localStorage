@@ -90,6 +90,7 @@ section {
     text-align: justify;
     line-height: 35px;
     box-shadow: 25px -20px 18px gray;
+    width:auto;
 }
 
 #liste #artUl ul {
@@ -160,6 +161,10 @@ article:last-child p {
     margin-top: 20px;
 }
 
+#liste img{
+    width: 100%;
+}
+
 /*********************** FOOTER *********************/
 footer div a {
     color: black;
@@ -187,5 +192,17 @@ footer div:first-child p {
     }
 }
 
+/********************** MEDIA QUERIES *********************/
 
+@media screen and (max-width:1000px){
+    #liste img:hover{
+        transform:scale(1.5);
+        }
+}
 
+@media screen and (max-width:650px){
+    #liste img:hover{
+        transform:scale(2);
+        margin-left: 150px;
+        }
+}
